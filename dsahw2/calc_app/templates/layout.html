@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Calculator App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <style>
+        /* simple layout styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        ul.menu {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        ul.menu li {
+            display: inline;
+        }
+
+        ul.menu a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        ul.menu a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="menu">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('calculate') }}">Basic Calculator</a></li>
+            <li><a href="{{ url_for('circle') }}">Circle Calculator</a></li>
+        </ul>
+
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

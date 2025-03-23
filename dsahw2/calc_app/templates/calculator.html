@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="calculator-container">
+    <h1>Basic Calculator</h1>
+    <p>Enter two numbers and choose an operation:</p>
+
+    <form method="post">
+        <input type="number" name="value1" step="any" placeholder="First number" required>
+        
+        <select name="operation" required>
+            <option value="">Choose operation</option>
+            <option value="add">Add (+)</option>
+            <option value="subtract">Subtract (−)</option>
+            <option value="multiply">Multiply (×)</option>
+            <option value="divide">Divide (÷)</option>
+        </select>
+
+        <input type="number" name="value2" step="any" placeholder="Second number" required>
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if printed_result %}
+        <div class="result-box">
+            <h2>Result: {{ printed_result }}</h2>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
